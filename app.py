@@ -26,14 +26,14 @@ def cbk():
             _from = v['from']
             _text = v['text']
     image_url = lib.misawa.random_misawa(_text)
-    logging.INFO(image_url)
+    logging.info(image_url)
     client = lib.lineclient.LineClient(os.environ)
     users = [_from]
     content = client.content_image(image_url)
     res = client.events(users, content)
     status = res.status
     body = res.read()
-    logging.INFO(status)
+    logging.info(status)
     return template('{{status}}', status=status)
 
 

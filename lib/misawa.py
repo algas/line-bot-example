@@ -23,12 +23,12 @@ def client_dic():
 
 def random_misawa(key):
     tbl = client_dic()
-    logging.INFO(key)
+    logging.info(key)
     for k, v in tbl.items():
         if key in k:
-            logging.INFO(k)
+            logging.info(k)
             return v
-    logging.INFO("at random")
+    logging.info("at random")
     return tbl[random.choice(list(tbl.keys()))]
         
 if __name__ == '__main__':
